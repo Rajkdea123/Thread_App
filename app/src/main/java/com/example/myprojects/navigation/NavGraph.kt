@@ -7,7 +7,10 @@ import androidx.navigation.compose.composable
 import com.example.myprojects.screens.AddThreads
 import com.example.myprojects.screens.BottomNav
 import com.example.myprojects.screens.Home
+import com.example.myprojects.screens.Login
 import com.example.myprojects.screens.Notification
+import com.example.myprojects.screens.Profile
+import com.example.myprojects.screens.Register
 import com.example.myprojects.screens.Search
 import com.example.myprojects.screens.Splash
 
@@ -22,22 +25,33 @@ fun NavGraph(navController: NavHostController){
             Splash(navController)
         }
         composable(Routes.Home.routes) {
-            Home()
+            Home(navController)
         }
         composable(Routes.Notification.routes) {
             Notification()
         }
         composable(Routes.Search.routes) {
-            Search()
+            Search(navController)
         }
         composable(Routes.BottomNav.routes) {
             BottomNav(navController)
 
         }
         composable(Routes.AddThreads.routes) {
-            AddThreads()
+            AddThreads(navController)
+        }
+        composable(Routes.Login.routes) {
+            Login(navController)
+
+        }
+        composable(Routes.Register.routes) {
+            Register(navController)
+        }
+        composable(Routes.Profile.routes) {
+            Profile(navController)
         }
     }
+
 
 }
 
