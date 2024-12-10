@@ -9,6 +9,7 @@ import com.example.myprojects.screens.BottomNav
 import com.example.myprojects.screens.Home
 import com.example.myprojects.screens.Login
 import com.example.myprojects.screens.Notification
+import com.example.myprojects.screens.OtherUsers
 import com.example.myprojects.screens.Profile
 import com.example.myprojects.screens.Register
 import com.example.myprojects.screens.Search
@@ -49,6 +50,10 @@ fun NavGraph(navController: NavHostController){
         }
         composable(Routes.Profile.routes) {
             Profile(navController)
+        }
+        composable(Routes.OtherUsers.routes) {
+            val data = it.arguments!!.getString("data")
+            OtherUsers(navController,data!!)
         }
     }
 

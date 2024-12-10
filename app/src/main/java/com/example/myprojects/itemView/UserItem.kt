@@ -1,6 +1,7 @@
 package com.example.myprojects.itemView
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,6 +27,7 @@ import androidx.navigation.NavHostController
 import coil3.compose.rememberAsyncImagePainter
 import com.example.myprojects.model.ThreadModel
 import com.example.myprojects.model.UserModel
+import com.example.myprojects.navigation.Routes
 import com.example.myprojects.utils.SharedPref
 
 @Composable
@@ -36,7 +38,11 @@ fun UserItem(
 ){
 
   Column {
-      ConstraintLayout(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+      ConstraintLayout(modifier = Modifier.fillMaxWidth().padding(16.dp).clickable {
+
+          val routes= Routes.OtherUsers.routes.replace("{data}",users.uid)
+          navHostController.navigate(routes)
+      }) {
           val(userImage,userName,date,time,title,image)= createRefs()
 
           Image(painter = rememberAsyncImagePainter(model= users.imageUrl), contentDescription = "close",

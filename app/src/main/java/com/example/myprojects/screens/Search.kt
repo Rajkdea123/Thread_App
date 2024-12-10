@@ -1,5 +1,4 @@
 package com.example.myprojects.screens
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -44,6 +43,7 @@ fun Search(navHostController: NavHostController){
     var search by remember {
         mutableStateOf("")
     }
+
 
   Column {
       Text(text = "Search", style = TextStyle(fontWeight = FontWeight.ExtraBold,
